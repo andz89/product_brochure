@@ -21,6 +21,8 @@
     "webpack-cli": "^4.5.0"
   },
   "dependencies": {
-    "bootstrap": "^5.0.0-beta2"
+    "bootstrap": "^5.0.0-beta2",
+    "clean-webpack-plugin": "^3.0.0",
+    "remove-files-webpack-plugin": "^1.4.4"
   }
 }
