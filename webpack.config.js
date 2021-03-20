@@ -1,15 +1,25 @@
 
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const {CleanWebpackPlugin} = require("clean-webpack-plugin");
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+// const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+
 module.exports ={
-    entry: './src/app/App.js',
+    entry: {
+      main: './src/app/App.js',
+      home: './src/app/another.js'
+  },
     output: {
-        filename:"bundled.[contenthash].js",
+        filename:"[name].bundled.[contenthash].js",
         path: path.resolve(__dirname, "dist/bundle"),
         clean: true,
     },
-    mode: "development",
+    optimization: {
+      splitChunks: {
+        chunks: 'all',
+      },
+    },
+    mode: "production",
     watch: true,
 
     plugins: [new HtmlWebpackPlugin({
@@ -17,7 +27,14 @@ module.exports ={
         inject: 'body',
         filename: '../index.html',
         
-    })
+    }),
+    //uncomment only for production mode
+    //  new  MiniCssExtractPlugin({
+    //   filename: "[name].[contenthash].css"
+    // }),
+ 
+    
+
   ],
  
 
@@ -26,8 +43,13 @@ module.exports ={
         rules: [
           {
             test: /\.scss$/i,
-            use: ['style-loader', 'css-loader', "sass-loader"],
+            use: [
+              // MiniCssExtractPlugin.loader, 
+              'style-loader',
+              'css-loader',
+               "sass-loader"],
           },
+          
           {
               test: /\.html$/,
               use: [{
@@ -50,6 +72,28 @@ module.exports ={
           },
         ],
       },
-
+      plugins:[   
+        new ImageMinimizerPlugin({
+        minimizerOptions: {
+          // Lossless optimization with custom option
+          // Feel free to experiment with options for better result for you
+          plugins: [
+            ['gifsicle', { interlaced: true }],
+            ['jpegtran', { progressive: true }],
+            ['optipng', { optimizationLevel: 5 }],
+            [
+              'svgo',
+              {
+                plugins: [
+                  {
+                    removeViewBox: false,
+                  },
+                ],
+              },
+            ],
+          ],
+        },
+      }),
+    ]
      
 }
