@@ -3,10 +3,26 @@
 @import "~bootstrap/scss/bootstrap";
 
 
-
-
 .btn-download{
     cursor: pointer;
 
+}
+
+.div-pic{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+
+.picture img{
+    width: 100%;
+}
+
+.grid{
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    justify-content: flex-start;
+    gap: 20px;
 }
 

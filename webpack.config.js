@@ -1,8 +1,8 @@
 
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
-// const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+// const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 module.exports ={
     entry: {
@@ -19,7 +19,7 @@ module.exports ={
         chunks: 'all',
       },
     },
-    mode: "production",
+    mode: "development",
     watch: true,
 
     plugins: [new HtmlWebpackPlugin({
@@ -28,11 +28,10 @@ module.exports ={
         filename: '../index.html',
         
     }),
-    //uncomment only for production mode
+    // uncomment only for production mode
     //  new  MiniCssExtractPlugin({
     //   filename: "[name].[contenthash].css"
     // }),
- 
     
 
   ],
@@ -67,33 +66,18 @@ module.exports ={
                   options:{
                       name: "[name].[hash].[ext]",
                       outputPath: "../imgs",  
+                    
                   }
               }]
           },
+          // {
+          //   test: /\.(jpg|png|gif|svg)$/,
+          //   loader: 'image-webpack-loader',
+          //   // Specify enforce: 'pre' to apply the loader
+          //   // before url-loader/svg-url-loader
+          //   // and not duplicate it in rules with them
+          //   enforce: 'pre'
+          // }
         ],
-      },
-      plugins:[   
-        new ImageMinimizerPlugin({
-        minimizerOptions: {
-          // Lossless optimization with custom option
-          // Feel free to experiment with options for better result for you
-          plugins: [
-            ['gifsicle', { interlaced: true }],
-            ['jpegtran', { progressive: true }],
-            ['optipng', { optimizationLevel: 5 }],
-            [
-              'svgo',
-              {
-                plugins: [
-                  {
-                    removeViewBox: false,
-                  },
-                ],
-              },
-            ],
-          ],
-        },
-      }),
-    ]
-     
+      },    
 }
