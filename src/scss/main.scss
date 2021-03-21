@@ -1,28 +1,25 @@
 
 @import "color.scss";
+
+@import "slides.scss";
+@import "frontPage.scss";
 @import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
-
-.btn-download{
-    cursor: pointer;
-
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.div-pic{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+html,
+body {
+  user-select: none;
+  font-family: 'Open Sans', sans-serif;
+  height: 100%;
+  width: 100%;
+  background-color: #ffdcdc;
+  color: #333;
+  line-height: 1.7;
+  overflow: hidden;
 }
-
-
-.picture img{
-    width: 100%;
-}
-
-.grid{
-    display: flex;
-    grid-template-columns: 1fr 1fr;
-    justify-content: flex-start;
-    gap: 20px;
-}
-

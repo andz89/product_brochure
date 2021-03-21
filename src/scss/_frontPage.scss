@@ -1,0 +1,45 @@
+.landing{
+    
+    position: relative;
+    margin-top:60px;
+    margin-bottom: 40px;
+    &-inner{
+
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: auto;
+        justify-content: center;
+        text-align: center;
+
+        h1{
+            font-size: 65px;
+        }
+         
+    
+    }
+
+}
+
+.section-a{
+
+    width: 40%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap:30px;
+    margin: auto;
+    color: #333;
+    height: 100%;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.card {
+    transition: transform 0.3s ease-in-out;
+}
+.card:hover{
+    transform: scale(1.05);
+}
+
+
+
