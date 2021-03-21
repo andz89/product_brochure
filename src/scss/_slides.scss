@@ -7,8 +7,8 @@
   transform: translateX(0);
   transition: transform 0.3s ease-out;
   cursor: grab;
-  background-color: #333;
-  color: #fff;
+  background-color: #ffdcdc;
+  color: #333;
 }
 
 .slide {
@@ -20,6 +20,7 @@
   justify-content: center;
   padding: 1rem;
   user-select: none;
+
 }
 
 .slide img {
@@ -37,12 +38,6 @@
   font-size: 1.3rem;
 }
 
-// .btn {
-//   background-color: #444;
-//   color: #fff;
-//   text-decoration: none;
-//   padding: 1rem 1.5rem;
-// }
 
 
 .grabbing {
@@ -52,8 +47,10 @@
 .grabbing .slide img {
   transform: scale(0.9);
 }
-
+.fa-home{
+    transition: transform 0.1s ease-in-out;
+}
 .fa-home:hover{
     cursor: pointer;
+    transform: scale(1.05);
 }
-

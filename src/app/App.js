@@ -7,12 +7,14 @@ import {slides} from './slides.js';
  const sliderContainer = document.querySelector('.slider-container');
  const main = document.querySelector("main")
 const homes = Array.from(document.querySelectorAll('.fa-home'));
+const body = document.querySelector('body')
 
  cards.forEach((card)=>{
     card.addEventListener('click', ()=>{
 
         main.style.display = "none";
         sliderContainer.style.display = "inline-flex"
+        body.style.overflow ="hidden"
      })
 
  })
@@ -20,7 +22,8 @@ const homes = Array.from(document.querySelectorAll('.fa-home'));
     home.addEventListener('click', ()=>{
 
         main.style.display = "block";
-        sliderContainer.style.display = "none"
+        sliderContainer.style.display = "none";
+        body.style.overflow ="auto"
      })
 
  })
