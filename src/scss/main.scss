@@ -6,6 +6,8 @@
 @import "~bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
+
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -21,5 +23,6 @@ body {
   background-color: #ffdcdc;
   color: #333;
   line-height: 1.7;
-
+  overflow-y: auto;
+  overflow-x: hidden;
 }

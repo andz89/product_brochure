@@ -18,7 +18,7 @@ module.exports ={
         chunks: 'all',
       },
     },
-    mode: "production",
+    mode: "development",
     watch: true,
 
     plugins: [new HtmlWebpackPlugin({
