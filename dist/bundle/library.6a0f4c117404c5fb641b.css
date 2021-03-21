@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css2?family=Open+Sans&display=swap);
 @charset "UTF-8";
 .slider-container {
-  height: 100vh;
+  height: 80vh;
   display: none;
   overflow: hidden;
   transform: translateX(0);

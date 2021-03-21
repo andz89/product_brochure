@@ -1,6 +1,6 @@
 
 .slider-container {
-  height: 100vh;
+  height: 80vh;
   display: none;
   overflow: hidden;
   transform: translateX(0);
@@ -51,4 +51,8 @@
 .fa-home:hover{
     cursor: pointer;
     transform: scale(1.05);
+}
+@media (max-width: 700px) {
+
+
 }
