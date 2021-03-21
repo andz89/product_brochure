@@ -91,10 +91,19 @@
   transform: scale(1.05);
 }
 
+img {
+  width: 100%;
+}
+
 @media (max-width: 700px) {
+  .landing-inner h1, .landing-inner .h1 {
+    font-size: 35px;
+  }
+
   .section-a {
     width: 100%;
     grid-template-columns: 1fr 1fr;
+    gap: 20px;
   }
 }
 /*!
