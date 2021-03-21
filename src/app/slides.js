@@ -12,11 +12,11 @@ let isDragging = false,
     currentIndex = 0
 
     // Disable context menu
-    window.oncontextmenu = function (event) {
-    event.preventDefault()
-    event.stopPropagation()
-    return false
-    }
+    // window.oncontextmenu = function (event) {
+    // event.preventDefault()
+    // event.stopPropagation()
+    // return false
+    // }
 
 
     slides.forEach((slide, index) => {
