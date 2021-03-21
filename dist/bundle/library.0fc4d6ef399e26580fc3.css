@@ -71,9 +71,9 @@
 }
 
 .section-a {
-  width: 40%;
+  width: 80%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 30px;
   margin: auto;
   color: #333;
@@ -91,9 +91,10 @@
   transform: scale(1.05);
 }
 
-@media (max-width: 550px) {
+@media (max-width: 700px) {
   .section-a {
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
   }
 }
 /*!
@@ -11034,4 +11035,5 @@ body {
   line-height: 1.7;
   overflow-y: auto;
   overflow-x: hidden;
+  padding: 5px;
 }
