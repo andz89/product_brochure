@@ -1,7 +1,6 @@
 
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 module.exports ={
@@ -19,7 +18,7 @@ module.exports ={
         chunks: 'all',
       },
     },
-    mode: "development",
+    mode: "production",
     watch: true,
 
     plugins: [new HtmlWebpackPlugin({
@@ -29,9 +28,9 @@ module.exports ={
         
     }),
     // uncomment only for production mode
-    //  new  MiniCssExtractPlugin({
-    //   filename: "[name].[contenthash].css"
-    // }),
+     new  MiniCssExtractPlugin({
+      filename: "[name].[contenthash].css"
+    }),
     
 
   ],
@@ -43,8 +42,8 @@ module.exports ={
           {
             test: /\.scss$/i,
             use: [
-              // MiniCssExtractPlugin.loader, 
-              'style-loader',
+              MiniCssExtractPlugin.loader, 
+              // 'style-loader',
               'css-loader',
                "sass-loader"],
           },
@@ -70,14 +69,14 @@ module.exports ={
                   }
               }]
           },
-          // {
-          //   test: /\.(jpg|png|gif|svg)$/,
-          //   loader: 'image-webpack-loader',
-          //   // Specify enforce: 'pre' to apply the loader
-          //   // before url-loader/svg-url-loader
-          //   // and not duplicate it in rules with them
-          //   enforce: 'pre'
-          // }
+          {
+            test: /\.(jpg|png|gif|svg)$/,
+            loader: 'image-webpack-loader',
+            // Specify enforce: 'pre' to apply the loader
+            // before url-loader/svg-url-loader
+            // and not duplicate it in rules with them
+            enforce: 'pre'
+          }
         ],
       },    
 }
